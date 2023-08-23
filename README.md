@@ -26,13 +26,25 @@
 
 ## Process State Explanation 🔧
 <p>
-    We have 5 states for each process.<br>
+    We have 3 main states.
+    <ol>
+        <li>Ready</li>
+        <li>Running</li>
+        <li>Waiting</li>
+    </ol>
     A process can't pass from "blocked" to "running", it have to go change its state to "ready".<br>
 </p>
 
 <p align="center">
     <img src="img/process-states.png" width="500px">
 </p>
+
+## Abstraction of Project Concepts 🔧
+
+**Thread:** Philosopher<br>
+**Async Task:**  Taking or Leaving a Fork<br>
+**Shared Resource:** Fork (2 philosopher can't share a single fork simultaneously).<br>
+**Critical Section:** When a Philosopher takes a fork and notifies the other four philosophers.<br>
 
 ## What if? Cases ❓❓❓
 
