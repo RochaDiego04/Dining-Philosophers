@@ -288,7 +288,7 @@ public class MainView extends javax.swing.JFrame {
 
         lbl_philosopher5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lbl_philosopher5.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_philosopher5.setText("Philosopher4");
+        lbl_philosopher5.setText("Philosopher5");
         pnl_Philosopher5.add(lbl_philosopher5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, -1, 30));
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -325,7 +325,7 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(img_philosopher3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 270, -1, -1));
 
         img_philosopher4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sleeping.png"))); // NOI18N
-        getContentPane().add(img_philosopher4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, -1, -1));
+        getContentPane().add(img_philosopher4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, -1, -1));
 
         img_philosopher5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/thinking.png"))); // NOI18N
         getContentPane().add(img_philosopher5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, -1));
