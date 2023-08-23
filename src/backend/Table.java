@@ -9,7 +9,7 @@ public class Table {
     private boolean[] forks;
     
     public Table(int numForks){
-        this.forks = new boolean[numForks];
+        this.forks = new boolean[numForks]; //default boolean = false
     }
     
     public int leftFork(int i){

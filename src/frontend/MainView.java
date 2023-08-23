@@ -342,6 +342,7 @@ public class MainView extends javax.swing.JFrame {
         lbl_numPhilosopher3.setText("3");
         getContentPane().add(lbl_numPhilosopher3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 280, -1, -1));
 
+        lbl_numPhilosopher4.setBackground(new java.awt.Color(255, 255, 255));
         lbl_numPhilosopher4.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 48)); // NOI18N
         lbl_numPhilosopher4.setText("4");
         getContentPane().add(lbl_numPhilosopher4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 290, -1, -1));

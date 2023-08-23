@@ -19,6 +19,9 @@ public class Philosopher extends Thread {
         while(true){
             this.thinking();
             this.table.takeForks(this.guestIndex); // If guest can't take forks, have to wait for them to be avaliable
+            System.out.println("Taken forks: " + 
+                    (this.table.leftFork(this.guestIndex) + 1) + " & " +
+                    (this.table.rightFork(this.guestIndex) + 1));
             this.eating();
             System.out.println("Philosopher" + guest + "stops eating");
             System.out.println("Avaliable forks: " + 
