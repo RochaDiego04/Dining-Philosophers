@@ -16,16 +16,11 @@ public class Controller implements ActionListener{
     private MainView view;
     private Table table = new Table(5);
     private Philosopher[] philosophers;
+    private boolean philosopherThreadsCreated = false;
     
     public Controller(MainView view, Table table){
         this.view = view;
         this.table = table;
-        this.philosophers = new Philosopher[5];
-        
-        for (int i = 0; i < philosophers.length; i++) { // Create all the philosophers
-            this.philosophers[i] = new Philosopher(table, i); // Assign each one a table and index
-        }
-        
         this.view.btn_start.addActionListener(this);
     }
     
@@ -35,10 +30,23 @@ public class Controller implements ActionListener{
     }
     
     public void actionPerformed(ActionEvent e){
+        if (!philosopherThreadsCreated) {
+            createPhilosophers();
+            philosopherThreadsCreated = true;
+        }
+        
         for (Philosopher philosopher : philosophers) { // Initialize every Philosopher thread
             if (!philosopher.isAlive()) { // Check if the thread is not already running
                 philosopher.start();
             }
+        }
+    }
+    
+    public void createPhilosophers() {
+        philosophers = new Philosopher[5];
+        
+        for (int i = 0; i < philosophers.length; i++) {
+            philosophers[i] = new Philosopher(table, i + 1); //Philosophers must be created from 1-5, not 0-4
         }
     }
     

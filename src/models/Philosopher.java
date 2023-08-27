@@ -23,7 +23,7 @@ public class Philosopher extends Thread {
                     (this.table.leftFork(this.guestIndex) + 1) + " & " +
                     (this.table.rightFork(this.guestIndex) + 1));
             this.eating();
-            System.out.println("Philosopher" + guest + "stops eating");
+            System.out.println("Philosopher " + guest + " stops eating");
             System.out.println("Avaliable forks: " + 
                     (this.table.leftFork(this.guestIndex) + 1) + " & " +
                     (this.table.rightFork(this.guestIndex) + 1));
@@ -32,7 +32,7 @@ public class Philosopher extends Thread {
     }
     
     public void thinking(){
-        System.out.println("Philosopher" + guest + "is thinking");
+        System.out.println("Philosopher " + guest + " is thinking");
         try {
             sleep((long) (Math.random() * 4000));
         } catch (InterruptedException ex) {
@@ -41,7 +41,7 @@ public class Philosopher extends Thread {
     }
     
     public void eating(){
-        System.out.println("Philosopher" + guest + "is eating");
+        System.out.println("Philosopher " + guest + " is eating");
         try {
             sleep((long) (Math.random() * 4000));
         } catch (InterruptedException ex) {
