@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package frontend;
+package view;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -30,10 +30,6 @@ public class MainView extends javax.swing.JFrame {
     private void initComponents() {
 
         panel_aside = new javax.swing.JPanel();
-        btn_start = new javax.swing.JPanel();
-        lbl_start = new javax.swing.JLabel();
-        btn_return = new javax.swing.JPanel();
-        lbl_return = new javax.swing.JLabel();
         pnl_Philosopher1 = new javax.swing.JPanel();
         lbl_philosopher = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -64,6 +60,8 @@ public class MainView extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jProgressBar12 = new javax.swing.JProgressBar();
         jProgressBar13 = new javax.swing.JProgressBar();
+        btn_start = new javax.swing.JButton();
+        btn_close = new javax.swing.JButton();
         img_philosopher1 = new javax.swing.JLabel();
         img_philosopher2 = new javax.swing.JLabel();
         img_philosopher3 = new javax.swing.JLabel();
@@ -74,6 +72,11 @@ public class MainView extends javax.swing.JFrame {
         lbl_numPhilosopher3 = new javax.swing.JLabel();
         lbl_numPhilosopher4 = new javax.swing.JLabel();
         lbl_numPhilosopher5 = new javax.swing.JLabel();
+        lbl_numFork1 = new javax.swing.JLabel();
+        lbl_numFork2 = new javax.swing.JLabel();
+        lbl_numFork3 = new javax.swing.JLabel();
+        lbl_numFork4 = new javax.swing.JLabel();
+        lbl_numFork5 = new javax.swing.JLabel();
         img_background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,80 +86,6 @@ public class MainView extends javax.swing.JFrame {
 
         panel_aside.setBackground(new java.awt.Color(0, 0, 0));
         panel_aside.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btn_start.setBackground(new java.awt.Color(51, 153, 0));
-        btn_start.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_startMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_startMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_startMouseExited(evt);
-            }
-        });
-
-        lbl_start.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbl_start.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_start.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_start.setText("START");
-
-        javax.swing.GroupLayout btn_startLayout = new javax.swing.GroupLayout(btn_start);
-        btn_start.setLayout(btn_startLayout);
-        btn_startLayout.setHorizontalGroup(
-            btn_startLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_startLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_start, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        btn_startLayout.setVerticalGroup(
-            btn_startLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_startLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_start, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        panel_aside.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
-
-        btn_return.setBackground(new java.awt.Color(153, 0, 0));
-        btn_return.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_returnMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_returnMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_returnMouseExited(evt);
-            }
-        });
-
-        lbl_return.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbl_return.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_return.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_return.setText("RETURN");
-
-        javax.swing.GroupLayout btn_returnLayout = new javax.swing.GroupLayout(btn_return);
-        btn_return.setLayout(btn_returnLayout);
-        btn_returnLayout.setHorizontalGroup(
-            btn_returnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_returnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_return, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        btn_returnLayout.setVerticalGroup(
-            btn_returnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_returnLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_return, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        panel_aside.add(btn_return, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 6, 130, -1));
 
         pnl_Philosopher1.setBackground(new java.awt.Color(0, 0, 0));
         pnl_Philosopher1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(255, 255, 255), null, new java.awt.Color(204, 204, 204)));
@@ -313,26 +242,56 @@ public class MainView extends javax.swing.JFrame {
 
         panel_aside.add(pnl_Philosopher5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 340, 90));
 
+        btn_start.setBackground(new java.awt.Color(51, 153, 0));
+        btn_start.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btn_start.setForeground(new java.awt.Color(255, 255, 255));
+        btn_start.setText("Start");
+        btn_start.setToolTipText("");
+        btn_start.setAlignmentX(0.5F);
+        btn_start.setBorderPainted(false);
+        btn_start.setFocusPainted(false);
+        btn_start.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_startMouseEntered(evt);
+            }
+        });
+        panel_aside.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 40));
+
+        btn_close.setBackground(new java.awt.Color(204, 0, 0));
+        btn_close.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btn_close.setForeground(new java.awt.Color(255, 255, 255));
+        btn_close.setText("Close");
+        btn_close.setToolTipText("");
+        btn_close.setAlignmentX(0.5F);
+        btn_close.setBorderPainted(false);
+        btn_close.setFocusPainted(false);
+        btn_close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_closeMouseEntered(evt);
+            }
+        });
+        panel_aside.add(btn_close, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 160, 40));
+
         getContentPane().add(panel_aside, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 600));
 
         img_philosopher1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eating.png"))); // NOI18N
-        getContentPane().add(img_philosopher1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, -1, -1));
+        getContentPane().add(img_philosopher1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, -1, -1));
 
         img_philosopher2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/thinking.png"))); // NOI18N
-        getContentPane().add(img_philosopher2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 100, -1, -1));
+        getContentPane().add(img_philosopher2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 110, -1, -1));
 
         img_philosopher3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/waiting.png"))); // NOI18N
-        getContentPane().add(img_philosopher3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 270, -1, -1));
+        getContentPane().add(img_philosopher3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, -1, -1));
 
         img_philosopher4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sleeping.png"))); // NOI18N
-        getContentPane().add(img_philosopher4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, -1, -1));
+        getContentPane().add(img_philosopher4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, -1, -1));
 
         img_philosopher5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/thinking.png"))); // NOI18N
-        getContentPane().add(img_philosopher5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, -1));
+        getContentPane().add(img_philosopher5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, -1, -1));
 
         lbl_numPhilosopher1.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 48)); // NOI18N
         lbl_numPhilosopher1.setText("1");
-        getContentPane().add(lbl_numPhilosopher1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, -1, -1));
+        getContentPane().add(lbl_numPhilosopher1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 170, -1, -1));
 
         lbl_numPhilosopher2.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 48)); // NOI18N
         lbl_numPhilosopher2.setText("2");
@@ -347,9 +306,35 @@ public class MainView extends javax.swing.JFrame {
         lbl_numPhilosopher4.setText("4");
         getContentPane().add(lbl_numPhilosopher4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 290, -1, -1));
 
+        lbl_numPhilosopher5.setBackground(new java.awt.Color(255, 255, 255));
         lbl_numPhilosopher5.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 48)); // NOI18N
         lbl_numPhilosopher5.setText("5");
-        getContentPane().add(lbl_numPhilosopher5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, -1, -1));
+        getContentPane().add(lbl_numPhilosopher5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 250, -1, -1));
+
+        lbl_numFork1.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 24)); // NOI18N
+        lbl_numFork1.setForeground(new java.awt.Color(153, 0, 0));
+        lbl_numFork1.setText("1");
+        getContentPane().add(lbl_numFork1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, -1, -1));
+
+        lbl_numFork2.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 24)); // NOI18N
+        lbl_numFork2.setForeground(new java.awt.Color(153, 0, 0));
+        lbl_numFork2.setText("2");
+        getContentPane().add(lbl_numFork2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 230, -1, -1));
+
+        lbl_numFork3.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 24)); // NOI18N
+        lbl_numFork3.setForeground(new java.awt.Color(153, 0, 0));
+        lbl_numFork3.setText("3");
+        getContentPane().add(lbl_numFork3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 380, -1, -1));
+
+        lbl_numFork4.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 24)); // NOI18N
+        lbl_numFork4.setForeground(new java.awt.Color(153, 0, 0));
+        lbl_numFork4.setText("4");
+        getContentPane().add(lbl_numFork4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, -1));
+
+        lbl_numFork5.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 24)); // NOI18N
+        lbl_numFork5.setForeground(new java.awt.Color(153, 0, 0));
+        lbl_numFork5.setText("5");
+        getContentPane().add(lbl_numFork5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, -1));
 
         img_background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/diningRoom.jpg"))); // NOI18N
         getContentPane().add(img_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 680, 600));
@@ -357,33 +342,13 @@ public class MainView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_startMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_startMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_startMouseClicked
-
-    private void btn_returnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_returnMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_returnMouseClicked
-
     private void btn_startMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_startMouseEntered
-        btn_start.setBackground(new Color(83,167,97));
-        btn_start.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        // TODO add your handling code here:
     }//GEN-LAST:event_btn_startMouseEntered
 
-    private void btn_startMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_startMouseExited
-        btn_start.setBackground(new Color(51,153,0));
-        btn_start.setCursor(Cursor.getDefaultCursor());
-    }//GEN-LAST:event_btn_startMouseExited
-
-    private void btn_returnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_returnMouseEntered
-        btn_return.setBackground(new Color(170,78,78));
-        btn_return.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_btn_returnMouseEntered
-
-    private void btn_returnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_returnMouseExited
-        btn_return.setBackground(new Color(153,0,0));
-        btn_return.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    }//GEN-LAST:event_btn_returnMouseExited
+    private void btn_closeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_closeMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_closeMouseEntered
 
     /**
      * @param args the command line arguments
@@ -421,8 +386,8 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btn_return;
-    private javax.swing.JPanel btn_start;
+    public javax.swing.JButton btn_close;
+    public javax.swing.JButton btn_start;
     private javax.swing.JLabel img_background;
     private javax.swing.JLabel img_philosopher1;
     private javax.swing.JLabel img_philosopher2;
@@ -449,6 +414,11 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JProgressBar jProgressBar7;
     private javax.swing.JProgressBar jProgressBar8;
     private javax.swing.JProgressBar jProgressBar9;
+    private javax.swing.JLabel lbl_numFork1;
+    private javax.swing.JLabel lbl_numFork2;
+    private javax.swing.JLabel lbl_numFork3;
+    private javax.swing.JLabel lbl_numFork4;
+    private javax.swing.JLabel lbl_numFork5;
     private javax.swing.JLabel lbl_numPhilosopher1;
     private javax.swing.JLabel lbl_numPhilosopher2;
     private javax.swing.JLabel lbl_numPhilosopher3;
@@ -459,8 +429,6 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_philosopher3;
     private javax.swing.JLabel lbl_philosopher4;
     private javax.swing.JLabel lbl_philosopher5;
-    private javax.swing.JLabel lbl_return;
-    private javax.swing.JLabel lbl_start;
     private javax.swing.JPanel panel_aside;
     private javax.swing.JPanel pnl_Philosopher1;
     private javax.swing.JPanel pnl_Philosopher2;
