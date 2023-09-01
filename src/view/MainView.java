@@ -284,10 +284,10 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().add(img_philosopher3, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, -1, -1));
 
         img_philosopher4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sleeping.png"))); // NOI18N
-        getContentPane().add(img_philosopher4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, -1, -1));
+        getContentPane().add(img_philosopher4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, -1, -1));
 
         img_philosopher5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/thinking.png"))); // NOI18N
-        getContentPane().add(img_philosopher5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, -1, -1));
+        getContentPane().add(img_philosopher5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, -1, -1));
 
         lbl_numPhilosopher1.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 0, 48)); // NOI18N
         lbl_numPhilosopher1.setText("1");
@@ -389,11 +389,11 @@ public class MainView extends javax.swing.JFrame {
     public javax.swing.JButton btn_close;
     public javax.swing.JButton btn_start;
     private javax.swing.JLabel img_background;
-    private javax.swing.JLabel img_philosopher1;
-    private javax.swing.JLabel img_philosopher2;
-    private javax.swing.JLabel img_philosopher3;
-    private javax.swing.JLabel img_philosopher4;
-    private javax.swing.JLabel img_philosopher5;
+    public javax.swing.JLabel img_philosopher1;
+    public javax.swing.JLabel img_philosopher2;
+    public javax.swing.JLabel img_philosopher3;
+    public javax.swing.JLabel img_philosopher4;
+    public javax.swing.JLabel img_philosopher5;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;

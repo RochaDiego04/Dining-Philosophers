@@ -25,9 +25,11 @@ public class Table {
        }
     }
     
-    public synchronized void takeForks(int guest){
+    public synchronized void takeForks(int guest, Philosopher phil){
         while(forks[leftFork(guest)] || forks[rightFork(guest)]){
             try { // If the forks aren't free, guest must wait
+                phil.setStateFlag("waiting");
+                phil.controller.updateGUI(guest); //Update GUI
                 wait();
             } catch (InterruptedException ex) {
                 Logger.getLogger(Table.class.getName()).log(Level.SEVERE, null, ex);
