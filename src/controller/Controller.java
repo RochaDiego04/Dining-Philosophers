@@ -18,12 +18,16 @@ public class Controller implements ActionListener{
     private MainView view;
     private Table table;
     private Philosopher[] philosophers;
+    
     private boolean philosopherThreadsCreated = false;
+    private boolean paused = false;
+    
     
     public Controller(MainView view, Table table){
         this.view = view;
         this.table = table;
         this.view.btn_start.addActionListener(this);
+        this.view.btn_pause.addActionListener(this);
     }
     
     public void start(){
@@ -34,22 +38,43 @@ public class Controller implements ActionListener{
             philosopherThreadsCreated = true;
         }
     }
+
+    public void createPhilosophers() {
+        this.philosophers = new Philosopher[5];
+    
+        for (int i = 0; i < this.philosophers.length; i++) {
+            this.philosophers[i] = new Philosopher(table, i + 1, this); //Philosophers must be created from 1-5, not 0-4
+        }
+    }
     
     public void actionPerformed(ActionEvent e){
+        if (e.getSource() == view.btn_start) {
+            startPhilosopherThreads();
+        }
+        else if (e.getSource() == view.btn_pause) {
+            togglePauseResume();
+        }
+    }
+    
+    private void togglePauseResume() {
+        paused = !paused; // Toggle the paused flag.
+        // Pause or resume all philosopher threads based on the shared paused state.
+        for (Philosopher philosopher : philosophers) {
+            if (paused) {
+                philosopher.pauseThread(); // Pause the thread.
+            } else {
+                philosopher.resumeThread(); // Resume the thread.
+            }
+        }
+    }
+    
+    public void startPhilosopherThreads() {
         for (int i = 0; i < philosophers.length; i++) { // Initialize every Philosopher thread
           Philosopher philosopher = philosophers[i];
             if (!philosopher.isAlive()) { // Check if the thread is not already running
                 philosopher.start();
                 this.updateGUIStates(i);
             }
-        }
-    }
-    
-    public void createPhilosophers() {
-        this.philosophers = new Philosopher[5];
-        
-        for (int i = 0; i < this.philosophers.length; i++) {
-            this.philosophers[i] = new Philosopher(table, i + 1, this); //Philosophers must be created from 1-5, not 0-4
         }
     }
     

@@ -12,6 +12,7 @@ public class Philosopher extends Thread {
     public Controller controller;
     
     private String stateFlag;
+    private boolean paused = false;
     
     public Philosopher(Table table, int guest, Controller controller){
         this.table = table;
@@ -21,18 +22,41 @@ public class Philosopher extends Thread {
         this.controller = controller;
     }
     
-    public void run(){
+    public void run() {
         this.sleeping();
-        while(true){
-            this.thinking();
-            this.waiting();// If guest can't take forks, have to wait for them to be avaliable
-            this.eating();
-            System.out.println("Philosopher " + guest + " stops eating");
+        
+        while (true) {
             
-            System.out.println("Avaliable forks: " + 
-                  (this.table.leftFork(this.guestIndex) + 1) + " & " +
-                  (this.table.rightFork(this.guestIndex) + 1));
+            while (paused) {
+                synchronized (this) {
+                    try {
+                        this.wait(); 
+                    } catch (InterruptedException ex) {
+
+                    }
+                }
+            }
+            this.thinking();
+            this.waiting();
+            this.eating();
             this.table.leaveForks(this.guestIndex, this);
+            
+            if(this.paused){
+                setStateFlag("sleeping");
+                controller.updateTxtArea(guestIndex);
+                controller.updateGUIStates(guestIndex);
+            }
+        }
+    }
+    
+    public void pauseThread() {
+        paused = true; 
+    }
+
+    public void resumeThread() {
+        synchronized (this) {
+            paused = false; 
+            this.notify();
         }
     }
     
