@@ -27,7 +27,7 @@ public class Controller implements ActionListener{
         this.view = view;
         this.table = table;
         this.view.btn_start.addActionListener(this);
-        this.view.btn_pause.addActionListener(this);
+        this.view.btn_toggle_pause_resume.addActionListener(this);
     }
     
     public void start(){
@@ -51,7 +51,7 @@ public class Controller implements ActionListener{
         if (e.getSource() == view.btn_start) {
             startPhilosopherThreads();
         }
-        else if (e.getSource() == view.btn_pause) {
+        else if (e.getSource() == view.btn_toggle_pause_resume) {
             togglePauseResume();
         }
     }
@@ -61,8 +61,10 @@ public class Controller implements ActionListener{
         // Pause or resume all philosopher threads based on the shared paused state.
         for (Philosopher philosopher : philosophers) {
             if (paused) {
+                view.btn_toggle_pause_resume.setText("Resume");
                 philosopher.pauseThread(); // Pause the thread.
             } else {
+                view.btn_toggle_pause_resume.setText("Pause");
                 philosopher.resumeThread(); // Resume the thread.
             }
         }

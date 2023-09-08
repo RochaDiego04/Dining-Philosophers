@@ -71,7 +71,7 @@ public class MainView extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         txtArea_Philosopher5 = new javax.swing.JTextArea();
         btn_start = new javax.swing.JButton();
-        btn_pause = new javax.swing.JButton();
+        btn_toggle_pause_resume = new javax.swing.JButton();
         img_philosopher1 = new javax.swing.JLabel();
         img_philosopher2 = new javax.swing.JLabel();
         img_philosopher3 = new javax.swing.JLabel();
@@ -322,20 +322,20 @@ public class MainView extends javax.swing.JFrame {
         });
         panel_aside.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, 40));
 
-        btn_pause.setBackground(new java.awt.Color(204, 0, 0));
-        btn_pause.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btn_pause.setForeground(new java.awt.Color(255, 255, 255));
-        btn_pause.setText("Pause");
-        btn_pause.setToolTipText("");
-        btn_pause.setAlignmentX(0.5F);
-        btn_pause.setBorderPainted(false);
-        btn_pause.setFocusPainted(false);
-        btn_pause.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_toggle_pause_resume.setBackground(new java.awt.Color(204, 0, 0));
+        btn_toggle_pause_resume.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btn_toggle_pause_resume.setForeground(new java.awt.Color(255, 255, 255));
+        btn_toggle_pause_resume.setText("Pause");
+        btn_toggle_pause_resume.setToolTipText("");
+        btn_toggle_pause_resume.setAlignmentX(0.5F);
+        btn_toggle_pause_resume.setBorderPainted(false);
+        btn_toggle_pause_resume.setFocusPainted(false);
+        btn_toggle_pause_resume.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_pauseMouseEntered(evt);
+                btn_toggle_pause_resumeMouseEntered(evt);
             }
         });
-        panel_aside.add(btn_pause, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 160, 40));
+        panel_aside.add(btn_toggle_pause_resume, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 160, 40));
 
         getContentPane().add(panel_aside, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 600));
 
@@ -411,9 +411,9 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_startMouseEntered
 
-    private void btn_pauseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_pauseMouseEntered
+    private void btn_toggle_pause_resumeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_toggle_pause_resumeMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_pauseMouseEntered
+    }//GEN-LAST:event_btn_toggle_pause_resumeMouseEntered
 
     /**
      * @param args the command line arguments
@@ -451,8 +451,8 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btn_pause;
     public javax.swing.JButton btn_start;
+    public javax.swing.JButton btn_toggle_pause_resume;
     private javax.swing.JLabel img_background;
     public javax.swing.JLabel img_philosopher1;
     public javax.swing.JLabel img_philosopher2;
