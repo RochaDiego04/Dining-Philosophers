@@ -36,30 +36,40 @@ public class MainView extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jProgressBar5 = new javax.swing.JProgressBar();
         jProgressBar4 = new javax.swing.JProgressBar();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtArea_Philosopher1 = new javax.swing.JTextArea();
         pnl_Philosopher2 = new javax.swing.JPanel();
         lbl_philosopher2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jProgressBar6 = new javax.swing.JProgressBar();
         jProgressBar7 = new javax.swing.JProgressBar();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtArea_Philosopher2 = new javax.swing.JTextArea();
         pnl_Philosopher3 = new javax.swing.JPanel();
         lbl_philosopher3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jProgressBar8 = new javax.swing.JProgressBar();
         jProgressBar9 = new javax.swing.JProgressBar();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtArea_Philosopher3 = new javax.swing.JTextArea();
         pnl_Philosopher4 = new javax.swing.JPanel();
         lbl_philosopher4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jProgressBar10 = new javax.swing.JProgressBar();
         jProgressBar11 = new javax.swing.JProgressBar();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        txtArea_Philosopher4 = new javax.swing.JTextArea();
         pnl_Philosopher5 = new javax.swing.JPanel();
         lbl_philosopher5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jProgressBar12 = new javax.swing.JProgressBar();
         jProgressBar13 = new javax.swing.JProgressBar();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        txtArea_Philosopher5 = new javax.swing.JTextArea();
         btn_start = new javax.swing.JButton();
         btn_close = new javax.swing.JButton();
         img_philosopher1 = new javax.swing.JLabel();
@@ -108,15 +118,26 @@ public class MainView extends javax.swing.JFrame {
         jProgressBar5.setForeground(new java.awt.Color(153, 255, 204));
         jProgressBar5.setValue(50);
         jProgressBar5.setBorderPainted(false);
-        pnl_Philosopher1.add(jProgressBar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 44, 80, 10));
+        pnl_Philosopher1.add(jProgressBar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 44, 60, 10));
 
         jProgressBar4.setBackground(new java.awt.Color(232, 232, 232));
         jProgressBar4.setForeground(new java.awt.Color(255, 153, 255));
-        jProgressBar4.setValue(30);
+        jProgressBar4.setValue(50);
         jProgressBar4.setBorderPainted(false);
-        pnl_Philosopher1.add(jProgressBar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 64, 80, 10));
+        pnl_Philosopher1.add(jProgressBar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 64, 60, 10));
 
-        panel_aside.add(pnl_Philosopher1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 340, 90));
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        txtArea_Philosopher1.setEditable(false);
+        txtArea_Philosopher1.setBackground(new java.awt.Color(0, 0, 0));
+        txtArea_Philosopher1.setColumns(20);
+        txtArea_Philosopher1.setForeground(new java.awt.Color(255, 255, 255));
+        txtArea_Philosopher1.setRows(5);
+        jScrollPane1.setViewportView(txtArea_Philosopher1);
+
+        pnl_Philosopher1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 4, 200, -1));
+
+        panel_aside.add(pnl_Philosopher1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 344, 90));
 
         pnl_Philosopher2.setBackground(new java.awt.Color(0, 0, 0));
         pnl_Philosopher2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(255, 255, 255), null, new java.awt.Color(204, 204, 204)));
@@ -139,15 +160,26 @@ public class MainView extends javax.swing.JFrame {
         jProgressBar6.setForeground(new java.awt.Color(153, 255, 204));
         jProgressBar6.setValue(50);
         jProgressBar6.setBorderPainted(false);
-        pnl_Philosopher2.add(jProgressBar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 44, 80, 10));
+        pnl_Philosopher2.add(jProgressBar6, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 44, 60, 10));
 
         jProgressBar7.setBackground(new java.awt.Color(232, 232, 232));
         jProgressBar7.setForeground(new java.awt.Color(255, 153, 255));
         jProgressBar7.setValue(30);
         jProgressBar7.setBorderPainted(false);
-        pnl_Philosopher2.add(jProgressBar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 64, 80, 10));
+        pnl_Philosopher2.add(jProgressBar7, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 64, 60, 10));
 
-        panel_aside.add(pnl_Philosopher2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 340, 90));
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        txtArea_Philosopher2.setEditable(false);
+        txtArea_Philosopher2.setBackground(new java.awt.Color(0, 0, 0));
+        txtArea_Philosopher2.setColumns(20);
+        txtArea_Philosopher2.setForeground(new java.awt.Color(255, 255, 255));
+        txtArea_Philosopher2.setRows(5);
+        jScrollPane2.setViewportView(txtArea_Philosopher2);
+
+        pnl_Philosopher2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 4, 200, -1));
+
+        panel_aside.add(pnl_Philosopher2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 344, 90));
 
         pnl_Philosopher3.setBackground(new java.awt.Color(0, 0, 0));
         pnl_Philosopher3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(255, 255, 255), null, new java.awt.Color(204, 204, 204)));
@@ -170,15 +202,26 @@ public class MainView extends javax.swing.JFrame {
         jProgressBar8.setForeground(new java.awt.Color(153, 255, 204));
         jProgressBar8.setValue(50);
         jProgressBar8.setBorderPainted(false);
-        pnl_Philosopher3.add(jProgressBar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 44, 80, 10));
+        pnl_Philosopher3.add(jProgressBar8, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 44, 60, 10));
 
         jProgressBar9.setBackground(new java.awt.Color(232, 232, 232));
         jProgressBar9.setForeground(new java.awt.Color(255, 153, 255));
         jProgressBar9.setValue(30);
         jProgressBar9.setBorderPainted(false);
-        pnl_Philosopher3.add(jProgressBar9, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 64, 80, 10));
+        pnl_Philosopher3.add(jProgressBar9, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 64, 60, 10));
 
-        panel_aside.add(pnl_Philosopher3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 340, 90));
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        txtArea_Philosopher3.setEditable(false);
+        txtArea_Philosopher3.setBackground(new java.awt.Color(0, 0, 0));
+        txtArea_Philosopher3.setColumns(20);
+        txtArea_Philosopher3.setForeground(new java.awt.Color(255, 255, 255));
+        txtArea_Philosopher3.setRows(5);
+        jScrollPane3.setViewportView(txtArea_Philosopher3);
+
+        pnl_Philosopher3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 4, 200, -1));
+
+        panel_aside.add(pnl_Philosopher3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 344, 90));
 
         pnl_Philosopher4.setBackground(new java.awt.Color(0, 0, 0));
         pnl_Philosopher4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(255, 255, 255), null, new java.awt.Color(204, 204, 204)));
@@ -201,15 +244,26 @@ public class MainView extends javax.swing.JFrame {
         jProgressBar10.setForeground(new java.awt.Color(153, 255, 204));
         jProgressBar10.setValue(50);
         jProgressBar10.setBorderPainted(false);
-        pnl_Philosopher4.add(jProgressBar10, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 44, 80, 10));
+        pnl_Philosopher4.add(jProgressBar10, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 44, 60, 10));
 
         jProgressBar11.setBackground(new java.awt.Color(232, 232, 232));
         jProgressBar11.setForeground(new java.awt.Color(255, 153, 255));
         jProgressBar11.setValue(30);
         jProgressBar11.setBorderPainted(false);
-        pnl_Philosopher4.add(jProgressBar11, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 64, 80, 10));
+        pnl_Philosopher4.add(jProgressBar11, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 64, 60, 10));
 
-        panel_aside.add(pnl_Philosopher4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 340, 90));
+        jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        txtArea_Philosopher4.setEditable(false);
+        txtArea_Philosopher4.setBackground(new java.awt.Color(0, 0, 0));
+        txtArea_Philosopher4.setColumns(20);
+        txtArea_Philosopher4.setForeground(new java.awt.Color(255, 255, 255));
+        txtArea_Philosopher4.setRows(5);
+        jScrollPane4.setViewportView(txtArea_Philosopher4);
+
+        pnl_Philosopher4.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 4, 200, -1));
+
+        panel_aside.add(pnl_Philosopher4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 344, 90));
 
         pnl_Philosopher5.setBackground(new java.awt.Color(0, 0, 0));
         pnl_Philosopher5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(255, 255, 255), null, new java.awt.Color(204, 204, 204)));
@@ -232,15 +286,26 @@ public class MainView extends javax.swing.JFrame {
         jProgressBar12.setForeground(new java.awt.Color(153, 255, 204));
         jProgressBar12.setValue(50);
         jProgressBar12.setBorderPainted(false);
-        pnl_Philosopher5.add(jProgressBar12, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 44, 80, 10));
+        pnl_Philosopher5.add(jProgressBar12, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 44, 60, 10));
 
         jProgressBar13.setBackground(new java.awt.Color(232, 232, 232));
         jProgressBar13.setForeground(new java.awt.Color(255, 153, 255));
         jProgressBar13.setValue(30);
         jProgressBar13.setBorderPainted(false);
-        pnl_Philosopher5.add(jProgressBar13, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 64, 80, 10));
+        pnl_Philosopher5.add(jProgressBar13, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 64, 60, 10));
 
-        panel_aside.add(pnl_Philosopher5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 340, 90));
+        jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        txtArea_Philosopher5.setEditable(false);
+        txtArea_Philosopher5.setBackground(new java.awt.Color(0, 0, 0));
+        txtArea_Philosopher5.setColumns(20);
+        txtArea_Philosopher5.setForeground(new java.awt.Color(255, 255, 255));
+        txtArea_Philosopher5.setRows(5);
+        jScrollPane5.setViewportView(txtArea_Philosopher5);
+
+        pnl_Philosopher5.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 4, 200, -1));
+
+        panel_aside.add(pnl_Philosopher5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 344, 90));
 
         btn_start.setBackground(new java.awt.Color(51, 153, 0));
         btn_start.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -414,6 +479,11 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JProgressBar jProgressBar7;
     private javax.swing.JProgressBar jProgressBar8;
     private javax.swing.JProgressBar jProgressBar9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel lbl_numFork1;
     private javax.swing.JLabel lbl_numFork2;
     private javax.swing.JLabel lbl_numFork3;
@@ -435,5 +505,10 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel pnl_Philosopher3;
     private javax.swing.JPanel pnl_Philosopher4;
     private javax.swing.JPanel pnl_Philosopher5;
+    public javax.swing.JTextArea txtArea_Philosopher1;
+    public javax.swing.JTextArea txtArea_Philosopher2;
+    public javax.swing.JTextArea txtArea_Philosopher3;
+    public javax.swing.JTextArea txtArea_Philosopher4;
+    public javax.swing.JTextArea txtArea_Philosopher5;
     // End of variables declaration//GEN-END:variables
 }

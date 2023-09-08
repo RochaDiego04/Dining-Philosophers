@@ -29,7 +29,8 @@ public class Table {
         while(forks[leftFork(guest)] || forks[rightFork(guest)]){
             try { // If the forks aren't free, guest must wait
                 phil.setStateFlag("waiting");
-                phil.controller.updateGUI(guest); //Update GUI
+                phil.controller.updateTxtArea(guest);
+                phil.controller.updateGUIStates(guest); //Update GUI
                 wait();
             } catch (InterruptedException ex) {
                 Logger.getLogger(Table.class.getName()).log(Level.SEVERE, null, ex);
@@ -37,12 +38,19 @@ public class Table {
         }
         
         forks[leftFork(guest)] = true;
+        phil.controller.updateForkInfoTxtArea(guest, leftFork(guest) + 1, "Take");
+        
         forks[rightFork(guest)] = true;
+        phil.controller.updateForkInfoTxtArea(guest, rightFork(guest) + 1, "Take" );
     }
     
-    public synchronized void leaveForks(int guest){
+    public synchronized void leaveForks(int guest, Philosopher phil){
         forks[leftFork(guest)] = false;
+        phil.controller.updateForkInfoTxtArea(guest, leftFork(guest) + 1, "Release" );
+        
         forks[rightFork(guest)] = false;
+        phil.controller.updateForkInfoTxtArea(guest, rightFork(guest) + 1, "Release" );
+        
         notifyAll();
     }
 }

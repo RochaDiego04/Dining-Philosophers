@@ -32,14 +32,15 @@ public class Philosopher extends Thread {
             System.out.println("Avaliable forks: " + 
                   (this.table.leftFork(this.guestIndex) + 1) + " & " +
                   (this.table.rightFork(this.guestIndex) + 1));
-            this.table.leaveForks(this.guestIndex);
+            this.table.leaveForks(this.guestIndex, this);
         }
     }
     
     public void thinking(){
         System.out.println("Philosopher " + guest + " is thinking");
         setStateFlag("thinking");
-        controller.updateGUI(guestIndex);
+        controller.updateTxtArea(guestIndex);
+        controller.updateGUIStates(guestIndex);
         try {
             sleep((long) (Math.random() * 4000));
         } catch (InterruptedException ex) {
@@ -49,15 +50,16 @@ public class Philosopher extends Thread {
     
     public void waiting(){
         this.table.takeForks(this.guestIndex, this);
-        System.out.println("Taken forks: " + 
-                (this.table.leftFork(this.guestIndex) + 1) + " & " +
-                (this.table.rightFork(this.guestIndex) + 1));
+        //System.out.println("Taken forks: " + 
+                //(this.table.leftFork(this.guestIndex) + 1) + " & " +
+                //(this.table.rightFork(this.guestIndex) + 1));
     }
     
     public void eating(){
         System.out.println("Philosopher " + guest + " is eating");
         setStateFlag("eating");
-        controller.updateGUI(guestIndex);
+        controller.updateTxtArea(guestIndex);
+        controller.updateGUIStates(guestIndex);
         try {
             sleep((long) (Math.random() * 4000));
         } catch (InterruptedException ex) {
@@ -67,9 +69,10 @@ public class Philosopher extends Thread {
     
     public void sleeping(){
         System.out.println("Philosopher " + guest + " is sleeping");
-        controller.updateGUI(guestIndex);
+        controller.updateTxtArea(guestIndex);
+        controller.updateGUIStates(guestIndex);
         try {
-            sleep((long) (Math.random() * 1000));
+            sleep((long) (Math.random() * 2000));
         } catch (InterruptedException ex) {
             Logger.getLogger(Philosopher.class.getName()).log(Level.SEVERE, null, ex);
         }

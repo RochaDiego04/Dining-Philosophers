@@ -40,7 +40,7 @@ public class Controller implements ActionListener{
           Philosopher philosopher = philosophers[i];
             if (!philosopher.isAlive()) { // Check if the thread is not already running
                 philosopher.start();
-                this.updateGUI(i);
+                this.updateGUIStates(i);
             }
         }
     }
@@ -53,7 +53,7 @@ public class Controller implements ActionListener{
         }
     }
     
-    public void updateGUI(int guestIndex) {
+    public void updateGUIStates(int guestIndex) {
        String newState = philosophers[guestIndex].getStateFlag();
        String route = "/images/" + newState + ".png";
        
@@ -75,6 +75,60 @@ public class Controller implements ActionListener{
             break;
        }
     }
-
+    
+    public void updateTxtArea(int guestIndex) {
+       String newState = philosophers[guestIndex].getStateFlag();
+       String text = "Is " + newState + "\n";
+       
+       switch (guestIndex) {
+        case 0:
+            view.txtArea_Philosopher1.append(text);
+            view.txtArea_Philosopher1.setCaretPosition(view.txtArea_Philosopher1.getDocument().getLength()); //Show last appended text in txtArea
+            break;
+        case 1:
+            view.txtArea_Philosopher2.append(text);
+            view.txtArea_Philosopher2.setCaretPosition(view.txtArea_Philosopher2.getDocument().getLength());
+            break;
+        case 2:
+            view.txtArea_Philosopher3.append(text);
+            view.txtArea_Philosopher3.setCaretPosition(view.txtArea_Philosopher3.getDocument().getLength());
+            break;
+        case 3:
+            view.txtArea_Philosopher4.append(text);
+            view.txtArea_Philosopher4.setCaretPosition(view.txtArea_Philosopher4.getDocument().getLength());
+            break;
+        case 4:
+            view.txtArea_Philosopher5.append(text);
+            view.txtArea_Philosopher5.setCaretPosition(view.txtArea_Philosopher5.getDocument().getLength());
+            break;
+       }
+    }
+    
+    public void updateForkInfoTxtArea(int guestIndex, int fork, String forkAction) {
+        String text = forkAction + " fork number: " + fork + "\n";
+        
+        switch (guestIndex) {
+            case 0 -> {
+                view.txtArea_Philosopher1.append(text);
+                view.txtArea_Philosopher1.setCaretPosition(view.txtArea_Philosopher1.getDocument().getLength());
+            }
+            case 1 -> {
+                view.txtArea_Philosopher2.append(text);
+                view.txtArea_Philosopher2.setCaretPosition(view.txtArea_Philosopher2.getDocument().getLength());
+            }
+            case 2 -> {
+                view.txtArea_Philosopher3.append(text);
+                view.txtArea_Philosopher3.setCaretPosition(view.txtArea_Philosopher3.getDocument().getLength());
+            }
+            case 3 -> {
+                view.txtArea_Philosopher4.append(text);
+                view.txtArea_Philosopher4.setCaretPosition(view.txtArea_Philosopher4.getDocument().getLength());
+            }
+            case 4 -> {
+                view.txtArea_Philosopher5.append(text);
+                view.txtArea_Philosopher5.setCaretPosition(view.txtArea_Philosopher5.getDocument().getLength());
+            }
+        }
+    }
     
 }
