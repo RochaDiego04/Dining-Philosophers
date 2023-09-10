@@ -1,5 +1,19 @@
 # Dining Philosophers 📖
 
+## Implementation 🚀
+<ul>
+    <li>Progress bars intervals of 25% for eating and thinking states (not waiting because the time is unknown). </li>
+    <li>Graphic changes of every philosopher state (sleeping, eating, thinking, waiting). </li>
+    <li>Implementation of a toggle pause/resume button, when the lifecycle of philosophers finish they fall asleep. </li>
+    <li>MVC architecture, controller communicates states between view and models. </li>
+    <li>Graphic Console for each philosopher to monitor states and shared resources (forks). </li>
+    <li>Friendly User Interface. </li>
+</ul>
+
+<p align="center"> 
+    <img src="img/Application.jpg" width="310px">
+</p>
+
 ## Problem Description 💡
 <p>
     Five philosophers sit at the table, each one has a plate of spaghetti.<br>
