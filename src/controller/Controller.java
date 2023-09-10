@@ -7,6 +7,7 @@ import models.Table;
 import view.MainView;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.JProgressBar;
 import javax.swing.SwingUtilities;
 
 /**
@@ -22,12 +23,19 @@ public class Controller implements ActionListener{
     private boolean philosopherThreadsCreated = false;
     private boolean paused = false;
     
+    private JProgressBar[] thinkingProgressBars;
+    private JProgressBar[] eatingProgressBars;
     
     public Controller(MainView view, Table table){
         this.view = view;
         this.table = table;
         this.view.btn_start.addActionListener(this);
         this.view.btn_toggle_pause_resume.addActionListener(this);
+        
+        thinkingProgressBars = new JProgressBar[5];
+        eatingProgressBars = new JProgressBar[5];
+        
+        initializeProgressBars();
     }
     
     public void start(){
@@ -155,6 +163,34 @@ public class Controller implements ActionListener{
                 view.txtArea_Philosopher5.append(text);
                 view.txtArea_Philosopher5.setCaretPosition(view.txtArea_Philosopher5.getDocument().getLength());
             }
+        }
+    }
+    
+    public void initializeProgressBars(){
+      for (int i = 0; i < 5; i++) {
+        
+        String eatingNumBar = "prgBar_eating_phil" + (i + 1);
+        try {
+            eatingProgressBars[i] = (JProgressBar) MainView.class.getDeclaredField(eatingNumBar).get(view);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+        
+        }
+        
+        String thinkingNumBar = "prgBar_thinking_phil" + (i + 1);
+        try {
+            thinkingProgressBars[i] = (JProgressBar) MainView.class.getDeclaredField(thinkingNumBar).get(view);
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+        
+        }
+      }
+    }
+    
+    public void updateProgressBars(String typeBar, int guestIndex, int progress){
+        if(typeBar == "eating"){
+            eatingProgressBars[guestIndex].setValue(progress);
+        }
+        else if (typeBar.equals("thinking")) {
+            thinkingProgressBars[guestIndex].setValue(progress);
         }
     }
     

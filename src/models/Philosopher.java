@@ -14,6 +14,9 @@ public class Philosopher extends Thread {
     private String stateFlag;
     private boolean paused = false;
     
+    private int progressEating = 0;
+    private int progressThinking = 0;
+    
     public Philosopher(Table table, int guest, Controller controller){
         this.table = table;
         this.guest = guest;
@@ -61,38 +64,48 @@ public class Philosopher extends Thread {
     }
     
     public void thinking(){
-        System.out.println("Philosopher " + guest + " is thinking");
         setStateFlag("thinking");
         controller.updateTxtArea(guestIndex);
         controller.updateGUIStates(guestIndex);
-        try {
-            sleep((long) (Math.random() * 4000));
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Philosopher.class.getName()).log(Level.SEVERE, null, ex);
+        
+        for (int i = 0; i < 4; i++) { // Split time sleep to 4 parts, progress bar intervals of 25%
+            try {
+                this.progressThinking += 25;
+                controller.updateProgressBars("thinking", guestIndex, progressThinking); 
+                sleep((long) ((Math.random() * 4000) / 4)); // Sleep for 25% of the total time
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Philosopher.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        
+        this.progressThinking = 0;
+        controller.updateProgressBars("thinking", guestIndex, progressThinking);
     }
     
     public void waiting(){
         this.table.takeForks(this.guestIndex, this);
-        //System.out.println("Taken forks: " + 
-                //(this.table.leftFork(this.guestIndex) + 1) + " & " +
-                //(this.table.rightFork(this.guestIndex) + 1));
     }
     
     public void eating(){
-        System.out.println("Philosopher " + guest + " is eating");
         setStateFlag("eating");
         controller.updateTxtArea(guestIndex);
         controller.updateGUIStates(guestIndex);
-        try {
-            sleep((long) (Math.random() * 4000));
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Philosopher.class.getName()).log(Level.SEVERE, null, ex);
+        
+        for (int i = 0; i < 4; i++) { // Split time sleep to 4 parts, progress bar intervals of 25%
+            try {
+                this.progressEating += 25;
+                controller.updateProgressBars("eating", guestIndex, progressEating); 
+                sleep((long) ((Math.random() * 4000) / 4)); // Sleep for 25% of the total time
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Philosopher.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        
+        this.progressEating = 0;
+        controller.updateProgressBars("eating", guestIndex, progressEating);
     }
     
     public void sleeping(){
-        System.out.println("Philosopher " + guest + " is sleeping");
         controller.updateTxtArea(guestIndex);
         controller.updateGUIStates(guestIndex);
         try {
@@ -101,7 +114,6 @@ public class Philosopher extends Thread {
             Logger.getLogger(Philosopher.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
 
     public void setStateFlag(String stateFlag) {
         this.stateFlag = stateFlag;
