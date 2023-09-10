@@ -64,6 +64,8 @@ public class Philosopher extends Thread {
     }
     
     public void thinking(){
+        int sleepTime = (int) (Math.random() * 4000 + 500);
+        
         setStateFlag("thinking");
         controller.updateTxtArea(guestIndex);
         controller.updateGUIStates(guestIndex);
@@ -72,7 +74,7 @@ public class Philosopher extends Thread {
             try {
                 this.progressThinking += 25;
                 controller.updateProgressBars("thinking", guestIndex, progressThinking); 
-                sleep((long) ((Math.random() * 4000) / 4)); // Sleep for 25% of the total time
+                sleep((long) (sleepTime / 4)); // Sleep for 25% of the total time
             } catch (InterruptedException ex) {
                 Logger.getLogger(Philosopher.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -87,6 +89,8 @@ public class Philosopher extends Thread {
     }
     
     public void eating(){
+        int sleepTime = (int) (Math.random() * 4000 + 500);
+        
         setStateFlag("eating");
         controller.updateTxtArea(guestIndex);
         controller.updateGUIStates(guestIndex);
@@ -95,7 +99,7 @@ public class Philosopher extends Thread {
             try {
                 this.progressEating += 25;
                 controller.updateProgressBars("eating", guestIndex, progressEating); 
-                sleep((long) ((Math.random() * 4000) / 4)); // Sleep for 25% of the total time
+                sleep((long) (sleepTime / 4)); // Sleep for 25% of the total time
             } catch (InterruptedException ex) {
                 Logger.getLogger(Philosopher.class.getName()).log(Level.SEVERE, null, ex);
             }
