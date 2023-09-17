@@ -11,7 +11,7 @@
 </ul>
 
 <p align="center"> 
-    <img src="img/Application.jpg" width="310px">
+    <img src="img/application.jpg" width="310px">
 </p>
 
 ## Problem Description 💡
