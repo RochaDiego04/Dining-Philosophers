@@ -2,7 +2,7 @@
 
 ## Implementation 🚀
 <ul>
-    <li>Progress bars intervals of 25% for eating and thinking states (not waiting because the time is unknown). </li>
+    <li>Progress bars intervals of 25% for "eating" and "thinking" states (not "waiting" because the time is unknown). </li>
     <li>Graphic changes of every philosopher state (sleeping, eating, thinking, waiting). </li>
     <li>Implementation of a toggle pause/resume button, when the lifecycle of philosophers finish they fall asleep. </li>
     <li>MVC architecture, controller communicates states between view and models. </li>
