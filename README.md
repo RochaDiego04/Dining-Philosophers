@@ -82,5 +82,9 @@
     Lock must be atomic, we must implement a mechanism so if 2 philosophers ask for the right to pick up fork, just one request of the lock will be successful.
 </p>
 
+## Author
+Copyright © 2023 RochaDiego04. All rights reserved.
+
+
 
 
